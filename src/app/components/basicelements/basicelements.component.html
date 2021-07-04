@@ -1,0 +1,81 @@
+<br />
+<div class="container" style="background-color: rgb(239, 248, 255)">
+  <div class="tim-title">
+    <h3>Rider data</h3>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Name" />
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Email" />
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Phone" />
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="tshirt" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="form-group">
+        <input
+          style="display: none"
+          type="file"
+          (change)="onFileChanged($event)"
+          #fileInput
+        />
+        <button (click)="fileInput.click()">Select File</button>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="form-group">
+        <button class="btn btn-primary text-right" type="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+
+<div class="section section-buttons">
+  <div class="container">
+    <div class="tim-title">
+      <h2>Riders</h2>
+    </div>
+    <div id="buttons">
+      <div class="row">
+        <div class="col">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>License No</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="data != null">
+              <tr *ngFor="let riders of data.data">
+                <td>{{ riders.id }}</td>
+                <td>{{ riders.full_name }}</td>
+                <td>{{ riders.license_no }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <br />
+    </div>
+    <br />
+  </div>
+</div>
